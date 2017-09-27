@@ -14,4 +14,4 @@ pi_username = ""
 pi_password = ""
 ```
 
-Run file.
+Run `WatsonAIDemo.py`.
