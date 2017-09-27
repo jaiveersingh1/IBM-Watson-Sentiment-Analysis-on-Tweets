@@ -4,17 +4,14 @@ import requests
 import json
 import twitter
 from watson_developer_cloud import PersonalityInsightsV2 as PersonalityInsights
+from secret import *
 
 def analyze(handle, count_tweets):
-    twitter_consumer_key = 'H5hcMDj7RimnmAKiXHIa3sTva'
-    twitter_consumer_secret = 'u4uiGKKauTCjj831Kd3ZBb0mUQkWQHaUM17r5OlkrKqfnih3Ll'
-    twitter_access_token = '4207694353-NhSzLcQDQfWpKcs3N0B3AllPW6dTSCEJ3atQR8b'
-    twitter_access_secret = 'HVNcV2LvP11vWTgLVmI0ihgqSCndE7wYeLsCusqTiTI4J'
+
     twitter_api = twitter.Api(consumer_key=twitter_consumer_key, consumer_secret = twitter_consumer_secret, access_token_key = twitter_access_token, access_token_secret=twitter_access_secret)
     statuses = twitter_api.GetUserTimeline(screen_name=handle, count=count_tweets, include_rts=False)
     text = ""
-    pi_username = "08a4dc26-4091-4d5b-8046-d714e03a0602"
-    pi_password = "O03PuGNBOQeT"
+
     personality_insights = PersonalityInsights(username=pi_username, password=pi_password)
     for status in statuses:
         if (status.lang == 'en'):
