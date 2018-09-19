@@ -1,4 +1,4 @@
-# CSAWatsonDemo
+# IBM Watson Sentiment Analysis on Tweets
 Using the Codecademy tutorial: https://www.codecademy.com/learn/ibm-watson
 
 Install dependencies as per tutorial.
